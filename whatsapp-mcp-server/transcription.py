@@ -29,7 +29,7 @@ DEFAULT_LANGUAGE = "auto"
 
 # Suffixes the bridge uses for voice notes and other audio.
 AUDIO_SUFFIXES = frozenset({".ogg", ".opus", ".m4a", ".mp3", ".wav", ".aac", ".amr"})
-WHISPER_BINARY = "whisper-cli"
+WHISPER_BINARY = os.getenv("WHISPER_BINARY", "").strip() or "whisper-cli"
 
 # Whisper wants 16 kHz mono PCM; phone voice notes are Opus.
 TARGET_SAMPLE_RATE = "16000"

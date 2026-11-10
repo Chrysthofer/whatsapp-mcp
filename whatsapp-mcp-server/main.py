@@ -329,7 +329,7 @@ def get_message_context(message_id: str, before: int = 5, after: int = 5) -> dic
     }
 
 
-@mcp.tool()
+# read-only fork: not exposed as a tool
 def send_message(
     recipient: str,
     message: str,
@@ -369,7 +369,7 @@ def send_message(
     return {"success": success, "message": status_message}
 
 
-@mcp.tool()
+# read-only fork: not exposed as a tool
 def send_reaction(
     recipient: str,
     message_id: str,
@@ -395,7 +395,7 @@ def send_reaction(
     return {"success": success, "message": status_message}
 
 
-@mcp.tool()
+# read-only fork: not exposed as a tool
 def mark_messages_read(
     message_ids: list[str],
     chat_jid: str,
@@ -420,7 +420,7 @@ def mark_messages_read(
     return {"success": success, "message": status_message}
 
 
-@mcp.tool()
+# read-only fork: not exposed as a tool
 def send_file(recipient: str, media_path: str, caption: str = "") -> dict[str, Any]:
     """Send a file (image, video, document) via WhatsApp, optionally with a caption.
 
@@ -444,7 +444,7 @@ def send_file(recipient: str, media_path: str, caption: str = "") -> dict[str, A
     return {"success": success, "message": status_message}
 
 
-@mcp.tool()
+# read-only fork: not exposed as a tool
 def send_audio_message(recipient: str, media_path: str) -> dict[str, Any]:
     """Send any audio file as a WhatsApp audio message to the specified recipient. For group messages use the JID. If it errors due to ffmpeg not being installed, use send_file instead.
 

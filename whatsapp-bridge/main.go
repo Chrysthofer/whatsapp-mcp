@@ -2785,7 +2785,7 @@ func newRESTMux(client *whatsmeow.Client, messageStore *MessageStore, port int, 
 }
 
 func startRESTServer(client *whatsmeow.Client, messageStore *MessageStore, port int, token string, allowedMediaRoots []string) {
-	handler := newRESTMux(client, messageStore, port, token, allowedMediaRoots)
+	handler := readOnly(newRESTMux(client, messageStore, port, token, allowedMediaRoots))
 
 	// Start the server with proper timeouts. Bind to loopback so the bridge is
 	// not reachable from the LAN; MCP clients talk to it over localhost.
